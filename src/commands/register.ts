@@ -7,8 +7,8 @@ export default class RegisterCommand implements Command {
   async run (interaction: I) {
     const [user] = await db.select('*').from('users').where('userid', interaction.user.id)
     if (!user) {
-      await db.insert({ userid: interaction.user.id, money: 50000 }).into('users')
-      await interaction.editReply('가입이 완료되었습니다. `가입축하금 +5만원`')
+      await db.insert({ userid: interaction.user.id }).into('users')
+      await interaction.editReply('가입이 완료되었습니다.')
     } else {
       await interaction.editReply('이미 가입하신적이 있는 계정 입니다.')
     }
