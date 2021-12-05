@@ -2,9 +2,9 @@ import knex from 'knex'
 export const db = knex({
   client: 'mysql',
   connection: {
-    host: 'th-release.kro.kr',
+    host: 'host',
     port: 3306,
-    user: 'cth',
-    database: 'th-nol'
+    user: 'username',
+    database: 'discord'
   }
 })
